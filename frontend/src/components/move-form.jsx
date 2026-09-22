@@ -44,7 +44,7 @@ const MoveForm = observer(({ item, isFolder, onClose }) => {
       onClose();
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        setError(error.response?.data?.detail || error.response?.data?.message || "Ошибка при перемещении");
+        setError(error.response?.data?.message || "Ошибка при перемещении");
       } else {
         setError("Неизвестная ошибка");
       }

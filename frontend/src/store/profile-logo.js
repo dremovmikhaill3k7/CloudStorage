@@ -3,8 +3,7 @@ import axios from "axios";
 
 class ProfileLogo {
     name = "";
-    isAdmin = false;
-
+    
     isLoading = false;
     error = null;
 
@@ -18,8 +17,7 @@ class ProfileLogo {
             const response = await axios.get('/api/user');
             
             this.name = response.data.username;
-            this.isAdmin = !!response.data.is_admin;
-
+            
             this.error = null;
             console.log("Username received:", this.name);
         } catch (error) {
