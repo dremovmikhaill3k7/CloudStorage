@@ -73,18 +73,6 @@ const ProfileNav = observer(() => {
             <div className="menu-item" onClick={handleprofile}>
               Профиль
             </div>
-            {profileLogo.isAdmin && (
-              <div
-                className="menu-item"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/admin");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Админ-панель
-              </div>
-            )}
             <div className="menu-item" onClick={handleLogout}>
               Выйти
             </div>

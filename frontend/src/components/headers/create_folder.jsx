@@ -38,7 +38,7 @@ const CreFolder = () => {
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        setError(err.response?.data?.detail || err.response?.data?.message || "Ошибка при создании папки");
+        setError(err.response?.data?.message || "Ошибка при создании папки");
       } else {
         setError("Неизвестная ошибка");
       }

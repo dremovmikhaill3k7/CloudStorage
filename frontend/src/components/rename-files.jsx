@@ -38,7 +38,7 @@ const RenameForm = observer(({ item, isFolder, onClose }) => {
       onClose();
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        setError(error.response?.data?.detail || error.response?.data?.message || "Ошибка при переименовании");
+        setError(error.response?.data?.message || "Ошибка при переименовании");
       } else {
         setError("Неизвестная ошибка");
       }

@@ -7,7 +7,6 @@ import Header from "./components/headers/header";
 import RegistrationForm from "./components/registration-form";
 import HeadProfile from "./components/profile/hed_profile.jsx";
 import Userinfo from "./components/profile/userinfo.jsx";
-import AdminPanel from "./components/admin/admin-panel.jsx";
 
 function App() {
   return (
@@ -34,17 +33,6 @@ function App() {
                   <Userinfo />
                 </div>
               </div>
-            }
-          />
-          <Route
-            path="/admin"
-            element={
-              <AuthWrapper>
-                <Header />
-                <div className="maininfo">
-                  <AdminPanel />
-                </div>
-              </AuthWrapper>
             }
           />
           <Route path="/Registration" element={<RegistrationForm />} />

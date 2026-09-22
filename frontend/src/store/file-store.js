@@ -57,8 +57,8 @@ class FileStore {
       });
 
       const url = folderId
-        ? `/api/client/folder/${folderId}/`
-        : "/api/client/disk/";
+        ? `api/client/folder/${folderId}/`
+        : "api/client/disk/";
 
       const response = await axios.get(url, {
         headers: {

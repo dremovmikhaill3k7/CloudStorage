@@ -70,28 +70,6 @@ const PopUp = observer(({ item, isFolder, onClose }) => {
     }
   };
 
-  const handleShare = async () => {
-    try {
-      const response = await axios.post(
-        `/api/file/${item.id}/share/`,
-        {},
-        { headers: { Authorization: `Bearer ${authStore.token}` } }
-      );
-      const url = response.data.url;
-      try {
-        await navigator.clipboard.writeText(url);
-        alert(`Ссылка скопирована в буфер обмена:\n${url}`);
-      } catch {
-        prompt("Скопируйте ссылку:", url);
-      }
-    } catch (error) {
-      console.error("Ошибка при создании ссылки:", error);
-      alert("Не удалось создать публичную ссылку");
-    } finally {
-      onClose();
-    }
-  };
-
   const handleRename = () => {
     setShowRenameForm(true);
     setIsVisible(false);
@@ -136,11 +114,6 @@ const PopUp = observer(({ item, isFolder, onClose }) => {
             {!isFolder && (
               <span onClick={handleDownload} className="popup-btn">
                 Скачать
-              </span>
-            )}
-            {!isFolder && (
-              <span onClick={handleShare} className="popup-btn">
-                Получить ссылку
               </span>
             )}
             <span onClick={handleDelete} className="popup-btn">
